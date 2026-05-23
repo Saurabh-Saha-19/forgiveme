@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to bottom,
+    #12002f,
+    #2d0057,
+    #4b0082,
+    #7b1fa2
+  );
+  position: relative;
+  color: white;
+}
+
+/* Animated Stars */
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 2px, transparent 2px);
+    
+  background-size: 120px 120px, 180px 180px, 250px 250px;
+
+  animation: twinkle 5s infinite alternate;
+  opacity: 0.8;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Main Container */
+
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Heading */
+
+.container h1 {
+  font-size: 70px;
+  font-family: cursive;
+  color: #fff;
+  text-shadow: 0 0 20px #ff66cc;
+}
+
+.container h2 {
+  font-size: 45px;
+  margin-top: 10px;
+  color: #ff8ad8;
+  font-family: cursive;
+}
+
+/* Small Text */
+
+.message {
+  margin-top: 25px;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #ffe6f5;
+}
+
+/* Glowing Heart Button */
+
+.heart-btn {
+  width: 220px;
+  height: 200px;
+  margin: 40px auto;
+  background: #ff4da6;
+  position: relative;
+  transform: rotate(-45deg);
+  cursor: pointer;
+
+  box-shadow:
+    0 0 20px #ff4da6,
+    0 0 40px #ff4da6,
+    0 0 80px #ff4da6;
+
+  animation: heartbeat 1.5s infinite;
+}
+
+.heart-btn::before,
+.heart-btn::after {
+  content: "";
+  width: 220px;
+  height: 200px;
+  background: #ff4da6;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart-btn::before {
+  top: -100px;
+  left: 0;
+}
+
+.heart-btn::after {
+  left: 100px;
+  top: 0;
+}
+
+/* Heart Text */
+
+.heart-text {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Heartbeat Animation */
+
+@keyframes heartbeat {
+  0% {
+    transform: rotate(-45deg) scale(1);
+  }
+
+  25% {
+    transform: rotate(-45deg) scale(1.05);
+  }
+
+  50% {
+    transform: rotate(-45deg) scale(1.1);
+  }
+
+  75% {
+    transform: rotate(-45deg) scale(1.05);
+  }
+
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+}
+
+/* Love Letter Card */
+
+.note {
+  width: 700px;
+  margin: auto;
+  margin-top: 60px;
+  padding: 40px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  backdrop-filter: blur(15px);
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.1),
+    0 0 40px rgba(255, 0, 150, 0.2);
+
+  color: white;
+
+  animation: fadeIn 1s ease;
+}
+
+.note h3 {
+  font-size: 40px;
+  margin-bottom: 25px;
+  font-family: cursive;
+  color: #ffd1ec;
+}
+
+.note p {
+  font-size: 24px;
+  line-height: 1.9;
+  color: #ffe9f7;
+}
+
+.note .footer {
+  margin-top: 35px;
+  font-size: 32px;
+  color: #ffb3e6;
+  font-family: cursive;
+}
+
+/* Fade Animation */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating Hearts */
+
+.floating-hearts span {
+  position: absolute;
+  color: #ff99cc;
+  font-size: 22px;
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}

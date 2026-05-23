@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>I'm Sorry ❤️</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        font-family: "Poppins", sans-serif;
+
+        background: linear-gradient(
+          to bottom,
+          #08001f 0%,
+          #180036 25%,
+          #320058 50%,
+          #5f157d 75%,
+          #ff5ca8 100%
+        );
+
+        position: relative;
+        color: white;
+      }
+
+      /* =========================
+       SKY STARS
+    ========================= */
+
+      .stars {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      .star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        background: white;
+        animation: twinkle 4s infinite alternate;
+      }
+
+      @keyframes twinkle {
+        from {
+          opacity: 0.2;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* =========================
+       SHOOTING STARS
+    ========================= */
+
+      .shooting-star {
+        position: absolute;
+        width: 2px;
+        height: 120px;
+
+        background: linear-gradient(white, transparent);
+
+        transform: rotate(45deg);
+
+        opacity: 0.8;
+
+        animation: shoot 3s linear forwards;
+      }
+
+      @keyframes shoot {
+        0% {
+          transform: translate(0, 0) rotate(45deg);
+
+          opacity: 1;
+        }
+
+        100% {
+          transform: translate(-700px, 700px) rotate(45deg);
+
+          opacity: 0;
+        }
+      }
+
+      /* =========================
+       FLOATING HEARTS
+    ========================= */
+
+      .floating-heart {
+        position: fixed;
+        bottom: -50px;
+        color: #ff8ad8;
+        font-size: 20px;
+        animation: floatUp linear forwards;
+        z-index: 2;
+        opacity: 0.7;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0) scale(0.8);
+
+          opacity: 0;
+        }
+
+        10% {
+          opacity: 1;
+        }
+
+        100% {
+          transform: translateY(-120vh) scale(1.5);
+
+          opacity: 0;
+        }
+      }
+
+      /* =========================
+       MAIN CONTENT
+    ========================= */
+
+      .container {
+        position: relative;
+        z-index: 5;
+
+        width: 100%;
+        max-width: 1200px;
+
+        margin: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding-top: 70px;
+        padding-bottom: 120px;
+      }
+
+      /* =========================
+       TITLE
+    ========================= */
+
+      .title {
+        font-family: "Great Vibes", cursive;
+        font-size: 120px;
+        color: white;
+
+        text-shadow:
+          0 0 10px #ff99cc,
+          0 0 30px #ff66cc,
+          0 0 60px #ff66cc;
+
+        line-height: 1;
+      }
+
+      .subtitle {
+        margin-top: 10px;
+
+        font-family: "Great Vibes", cursive;
+
+        font-size: 70px;
+
+        color: #ff7fd2;
+
+        text-shadow:
+          0 0 10px #ff66cc,
+          0 0 30px #ff66cc;
+      }
+
+      .line {
+        margin-top: 20px;
+        width: 300px;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #ff8ad8,
+          transparent
+        );
+      }
+
+      .small-text {
+        margin-top: 30px;
+
+        text-align: center;
+
+        line-height: 1.6;
+
+        color: #fff;
+
+        font-size: 18px;
+
+        position: relative;
+        z-index: 10; /* keeps text above */
+      }
+
+      /* =========================
+       HEART BUTTON
+    ========================= */
+
+      .heart-wrapper {
+        margin-top: 120px; /* increased spacing */
+        margin-bottom: 80px;
+
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        z-index: 5;
+      }
+
+      .heart-btn {
+        width: 180px;
+        height: 180px;
+
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #e8e8ff 40%,
+          #ffffff 60%,
+          #d0d0f0 100%
+        );
+
+        position: relative;
+        z-index: 1;
+        transform: rotate(-45deg);
+
+        cursor: pointer;
+
+        animation: heartbeat 1.8s infinite;
+
+        box-shadow:
+          0 0 15px rgba(255, 255, 255, 0.9),
+          0 0 40px rgba(255, 255, 255, 0.6),
+          0 0 80px rgba(200, 180, 255, 0.5),
+          0 0 140px rgba(180, 150, 255, 0.3);
+      }
+
+      .heart-btn::before,
+      .heart-btn::after {
+        content: "";
+
+        position: absolute;
+
+        width: 180px;
+        height: 180px;
+
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #e8e8ff 40%,
+          #ffffff 60%,
+          #d0d0f0 100%
+        );
+
+        border-radius: 50%;
+      }
+
+      .heart-btn::before {
+        top: -90px;
+        left: 0;
+      }
+
+      .heart-btn::after {
+        left: 90px;
+        top: 0;
+      }
+
+      @keyframes heartbeat {
+        0% {
+          transform: rotate(-45deg) scale(1);
+        }
+
+        25% {
+          transform: rotate(-45deg) scale(1.05);
+        }
+
+        50% {
+          transform: rotate(-45deg) scale(1.12);
+        }
+
+        75% {
+          transform: rotate(-45deg) scale(1.05);
+        }
+
+        100% {
+          transform: rotate(-45deg) scale(1);
+        }
+      }
+
+      .heart-text {
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%) rotate(45deg);
+
+        z-index: 5;
+
+        text-align: center;
+
+        color: white;
+
+        /* Allow the heart image inside to extend beyond this wrapper */
+        overflow: visible;
+        width: 0;
+        height: 0;
+      }
+
+      .heart-text h2 {
+        font-size: 28px; /* reduced from 42px */
+        font-weight: 600;
+      }
+
+      .heart-text p {
+        margin-top: 8px;
+        font-size: 18px; /* reduced from 24px */
+      }
+      .click-hint {
+        position: relative;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: -80px;
+      }
+
+      .click-text {
+        color: #ffd8f0;
+        font-size: 20px;
+        font-family: "Poppins", sans-serif;
+        margin-top: 4px;
+        margin-left: 22px;
+      }
+
+      .curved-arrow {
+        width: 85px;
+        height: 75px;
+      }
+      /* =========================
+   HEART IMAGE — SVG CLIP PATH FIX
+========================= */
+
+      .heart-image {
+        position: absolute;
+
+        /* Slightly above center to fill the heart top lobes too */
+        top: 46%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        /* Large enough to fill 95% of the pink heart button */
+        width: 252px;
+        height: 252px;
+
+        z-index: 20;
+
+        overflow: hidden;
+
+        clip-path: url(#heartClip);
+
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.85))
+          drop-shadow(0 0 25px #ff66cc) drop-shadow(0 0 50px #ff66cc);
+      }
+
+      /* IMAGE */
+
+      .heart-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center 20%;
+
+        display: block;
+      }
+
+      /* =========================
+       LETTER BOX
+    ========================= */
+
+      .note {
+        margin-top: 80px;
+
+        width: 90%;
+        max-width: 850px;
+
+        padding: 60px;
+
+        border-radius: 35px;
+
+        background: rgba(255, 255, 255, 0.08);
+
+        border: 1px solid rgba(255, 255, 255, 0.2);
+
+        backdrop-filter: blur(14px);
+
+        box-shadow:
+          0 0 25px rgba(255, 255, 255, 0.15),
+          0 0 60px rgba(255, 0, 170, 0.25);
+
+        text-align: center;
+
+        opacity: 0;
+
+        transform: translateY(40px);
+
+        transition: 1s ease;
+      }
+
+      .note.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .note-title {
+        font-family: "Great Vibes", cursive;
+
+        font-size: 60px;
+
+        color: #ffd5ec;
+
+        margin-bottom: 30px;
+      }
+
+      .note p {
+        font-size: 28px;
+
+        line-height: 1.8;
+
+        color: #fff0fa;
+
+        margin-bottom: 30px;
+      }
+
+      .footer {
+        margin-top: 30px;
+
+        font-family: "Great Vibes", cursive;
+
+        font-size: 52px;
+
+        color: #ffb7df;
+      }
+
+      /* =========================
+       WATER EFFECT
+    ========================= */
+
+      .water {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: 220px;
+
+        background: linear-gradient(
+          to top,
+          rgba(255, 105, 180, 0.35),
+          transparent
+        );
+
+        backdrop-filter: blur(2px);
+
+        opacity: 0.8;
+      }
+
+      /* =========================
+       RESPONSIVE
+    ========================= */
+
+      @media (max-width: 768px) {
+        .title {
+          font-size: 70px;
+        }
+
+        .subtitle {
+          font-size: 45px;
+        }
+
+        .heart-btn {
+          width: 160px;
+          height: 160px;
+        }
+
+        .heart-btn::before,
+        .heart-btn::after {
+          width: 160px;
+          height: 160px;
+        }
+
+        .heart-btn::before {
+          top: -80px;
+        }
+
+        .heart-btn::after {
+          left: 80px;
+        }
+
+        .heart-text h2 {
+          font-size: 30px;
+        }
+
+        .note {
+          padding: 35px;
+        }
+
+        .note p {
+          font-size: 20px;
+        }
+
+        .note-title {
+          font-size: 45px;
+        }
+
+        .footer {
+          font-size: 40px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEART CLIP PATH DEFINITION -->
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <clipPath id="heartClip" clipPathUnits="objectBoundingBox">
+          <path
+            d="
+            M0.5,0.9
+            C0.5,0.9 0.05,0.55 0.05,0.3
+            C0.05,0.13 0.18,0.02 0.32,0.05
+            C0.4,0.06 0.47,0.12 0.5,0.2
+            C0.53,0.12 0.6,0.06 0.68,0.05
+            C0.82,0.02 0.95,0.13 0.95,0.3
+            C0.95,0.55 0.5,0.9 0.5,0.9Z
+          "
+          />
+        </clipPath>
+      </defs>
+    </svg>
+
+    <!-- STARS -->
+    <div class="stars"></div>
+
+    <!-- MAIN -->
+    <div class="container">
+      <h1 class="title">I’m Sorry ♡</h1>
+
+      <h2 class="subtitle">Please Forgive Me</h2>
+
+      <div class="line"></div>
+
+      <div class="small-text">
+        I never meant to hurt you.<br />
+        You mean the world to me my bestooo.
+      </div>
+
+      <!-- HEART -->
+
+      <div class="heart-wrapper">
+        <div class="heart-btn" id="heartBtn">
+          <div class="heart-text">
+            <div class="heart-image">
+              <img src="./1.jpeg" alt="Friend" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="click-hint">
+        <!-- Curved arrow pointing up-left toward the heart -->
+        <svg
+          class="curved-arrow"
+          viewBox="0 0 90 85"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- Simple smooth curve from bottom-right up to top-left -->
+          <path
+            d="M 72 72 C 72 35, 25 55, 18 12"
+            stroke="#ff99d6"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <!-- Arrowhead -->
+          <path
+            d="M 18 12 L 9 22 M 18 12 L 27 20"
+            stroke="#ff99d6"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            fill="none"
+          />
+        </svg>
+        <div class="click-text">Click the heart ♡</div>
+      </div>
+
+      <!-- NOTE -->
+
+      <div class="note" id="note">
+        <h2 class="note-title">To My Dearest ♡</h2>
+
+        <p>
+          I know I've made mistakes and hurted you... 😔💔<br />
+          And for that, I'm truly sorry from the bottom of my heart. 🥺🙏<br /><br />
+
+          You are the most important part of my life. 🌟<br />
+          Your smile, your presence, your friendship — 😊✨<br />
+          they all mean everything to me. 💝<br /><br />
+
+          I promise to do better, to understand you, 🤝<br />
+          to be the perfect friend in the way you deserve. 👫💕<br /><br />
+
+          Please forgive me and give me another chance. 🌸🙏<br />
+          I just want to make you happy and smile, always. 😊💖
+        </p>
+
+        <div class="line"></div>
+
+        <div class="footer">♡ Forever Yours Friend, Pichibathai ♡</div>
+      </div>
+    </div>
+
+    <div class="water"></div>
+
+    <script>
+      /* =========================
+       REVEAL LETTER
+    ========================= */
+
+      const heartBtn = document.getElementById("heartBtn");
+
+      const note = document.getElementById("note");
+
+      heartBtn.addEventListener("click", () => {
+        note.classList.add("show");
+
+        note.scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+
+      /* =========================
+       GENERATE STARS
+    ========================= */
+
+      const stars = document.querySelector(".stars");
+
+      for (let i = 0; i < 180; i++) {
+        const star = document.createElement("div");
+
+        star.classList.add("star");
+
+        star.style.left = Math.random() * 100 + "vw";
+
+        star.style.top = Math.random() * 100 + "vh";
+
+        star.style.width = Math.random() * 3 + "px";
+
+        star.style.height = star.style.width;
+
+        star.style.animationDuration = Math.random() * 5 + 2 + "s";
+
+        stars.appendChild(star);
+      }
+
+      /* =========================
+       FLOATING SAD EMOJIS
+    ========================= */
+
+      function createHeart() {
+        const heart = document.createElement("div");
+
+        heart.classList.add("floating-heart");
+
+        const sadEmojis = ["😢", "😔", "💔", "😿", "🥺", "😞", "😭"];
+        heart.innerHTML =
+          sadEmojis[Math.floor(Math.random() * sadEmojis.length)];
+
+        heart.style.left = Math.random() * 100 + "vw";
+
+        heart.style.animationDuration = Math.random() * 6 + 6 + "s";
+
+        heart.style.fontSize = Math.random() * 25 + 15 + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 12000);
+      }
+
+      setInterval(createHeart, 500);
+
+      /* =========================
+       SHOOTING STARS
+    ========================= */
+
+      function shootingStar() {
+        const star = document.createElement("div");
+
+        star.classList.add("shooting-star");
+
+        star.style.left = Math.random() * window.innerWidth + "px";
+
+        star.style.top = Math.random() * 200 + "px";
+
+        document.body.appendChild(star);
+
+        setTimeout(() => {
+          star.remove();
+        }, 3000);
+      }
+
+      setInterval(shootingStar, 3500);
+    </script>
+  </body>
+</html>
